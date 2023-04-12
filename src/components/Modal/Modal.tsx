@@ -29,7 +29,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
       className="fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50"
       onClick={onClose}
     >
-      <div className="w-[60vw] rounded-md bg-white p-8">
+      <div
+        className="w-[60vw] rounded-md bg-white p-8"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="mb-4 flex">
           {title}
           <button onClick={onClose} className="ml-auto text-gray-600">
