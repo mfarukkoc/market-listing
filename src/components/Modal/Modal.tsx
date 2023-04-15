@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import XMark from "@/assets/svg/XMark.svg";
 import { AnimatePresence, motion } from "framer-motion";
-
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;

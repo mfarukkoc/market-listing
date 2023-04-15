@@ -4,7 +4,7 @@ import { ProductType } from "@/types/product";
 import { useAtomValue, useSetAtom } from "jotai";
 import React from "react";
 import ProductCounter from "../Counter/ProductCounter";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface ProductItemProps {
   product: ProductType;

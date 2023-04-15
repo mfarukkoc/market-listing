@@ -9,8 +9,6 @@ interface CounterProps {
   onChange: (count: number) => void;
 }
 
-const variants = {};
-
 function Counter({ count, onChange }: CounterProps) {
   const prevCountRef = useRef<number | undefined>();
 
@@ -27,7 +25,11 @@ function Counter({ count, onChange }: CounterProps) {
 
   return (
     <div className="flex w-full justify-center text-cyan-600">
-      <button className="px-3" onClick={() => onChange(count - 1)}>
+      <button
+        type="button"
+        className="px-3"
+        onClick={() => onChange(count - 1)}
+      >
         {count === 1 ? (
           <Trash className="h-4 w-4" />
         ) : (
@@ -60,7 +62,11 @@ function Counter({ count, onChange }: CounterProps) {
           </motion.span>
         </AnimatePresence>
       </div>
-      <button className="px-3" onClick={() => onChange(count + 1)}>
+      <button
+        type="button"
+        className="px-3"
+        onClick={() => onChange(count + 1)}
+      >
         <Plus className="h-4 w-4" />
       </button>
     </div>

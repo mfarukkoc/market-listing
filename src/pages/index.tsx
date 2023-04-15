@@ -1,11 +1,7 @@
-import FilterCard from "@/features/ProductFilter/FilterCard/FilterCard";
 import Header from "@/components/Header/Header";
-import { getBrands, getProducts, getTags } from "@/services";
+import { getBrands, getTags } from "@/services";
 import Head from "next/head";
-import { QueryClient, dehydrate, useQuery } from "react-query";
-import SortingFilter from "@/features/ProductFilter/Filters/SortingFilter";
-import BrandsFilter from "@/features/ProductFilter/Filters/BrandsFilter";
-import TagsFilter from "@/features/ProductFilter/Filters/TagFilter";
+import { QueryClient, dehydrate } from "react-query";
 import ProductContainer from "@/features/Product/Container/ProductContainer";
 import Cart from "@/features/Cart/Cart";
 import FilterContainer from "@/features/ProductFilter/FilterContainer";
