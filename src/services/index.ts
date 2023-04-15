@@ -1,6 +1,7 @@
 import { sortOptionsType } from "@/pages/api/products";
 import { ProductType } from "@/types/product";
 
+const url = process.env.NEXT_PUBLIC_BASE_URL;
 export interface getProductsProps {
   itemType?: ProductType["itemType"];
   sort?: sortOptionsType;
@@ -35,7 +36,7 @@ export async function getProducts(params?: getProductsProps) {
     }, [] as string[])
     .join("&");
 
-  return fetch("/api/products?" + queryParams).then((res) =>
+  return fetch(url + "/api/products?" + queryParams).then((res) =>
     res.json()
   ) as Promise<GetProductsResponse>;
 }
@@ -52,10 +53,14 @@ export interface BrandType {
 }
 
 export async function getBrands() {
-  return fetch("/api/brands").then((res) => res.json()) as Promise<BrandType[]>;
+  return fetch(url + "/api/brands").then((res) => res.json()) as Promise<
+    BrandType[]
+  >;
 }
 
 export type TagType = string;
 export async function getTags() {
-  return fetch("/api/tags").then((res) => res.json()) as Promise<TagType[]>;
+  return fetch(url + "/api/tags").then((res) => res.json()) as Promise<
+    TagType[]
+  >;
 }
