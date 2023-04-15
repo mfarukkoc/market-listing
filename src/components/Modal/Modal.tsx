@@ -43,7 +43,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
           }}
         >
           <div
-            className="w-[60vw] rounded-md bg-white p-8"
+            className="w-[90vw] max-w-3xl rounded-md bg-white p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-4 flex">

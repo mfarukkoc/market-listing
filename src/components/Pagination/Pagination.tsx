@@ -64,20 +64,21 @@ const Pagination = ({
       {dots.left && (
         <>
           <button
-            className="mx-2 rounded-md p-3 transition-colors hover:text-cyan-600"
+            className="mx-2 hidden rounded-md p-3 transition-colors hover:text-cyan-600 sm:block"
             onClick={() => handlePageClick(1)}
           >
             1
           </button>
-          <span className="mx-2">..</span>
+          <span className="mx-2 hidden sm:block">..</span>
         </>
       )}
       {pageNumbers.map((page) => (
         <button
           key={page}
-          className={clsx(`mx-2 rounded-md p-3 transition-colors`, {
-            "hover:text-cyan-600": page !== currentPage,
-            "bg-cyan-600 text-white hover:bg-cyan-500": page === currentPage,
+          className={clsx(`mx-2  rounded-md p-3 transition-colors sm:block`, {
+            "hidden hover:text-cyan-600": page !== currentPage,
+            "block bg-cyan-600 text-white hover:bg-cyan-500":
+              page === currentPage,
           })}
           onClick={() => handlePageClick(page)}
         >
@@ -86,9 +87,9 @@ const Pagination = ({
       ))}
       {dots.right && (
         <>
-          <span className="mx-2">..</span>
+          <span className="mx-2 hidden sm:block">..</span>
           <button
-            className="mx-2 rounded-md p-3 transition-colors hover:text-cyan-600"
+            className="mx-2 hidden rounded-md p-3 transition-colors hover:text-cyan-600 sm:block"
             onClick={() => handlePageClick(totalPages)}
           >
             {totalPages}
