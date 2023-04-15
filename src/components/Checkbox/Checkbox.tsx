@@ -30,7 +30,7 @@ function Checkbox({
         )}
       >
         {checked && (
-          <CheckIcon width="12" height="100%" className="text-white" />
+          <CheckIcon width="12" height="100%" className="check text-white" />
         )}
       </div>
       <input

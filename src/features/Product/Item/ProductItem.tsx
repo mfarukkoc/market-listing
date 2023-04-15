@@ -4,6 +4,7 @@ import { ProductType } from "@/types/product";
 import { useAtomValue, useSetAtom } from "jotai";
 import React from "react";
 import ProductCounter from "../Counter/ProductCounter";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ProductItemProps {
   product: ProductType;
@@ -26,14 +27,30 @@ function ProductItem({ product }: ProductItemProps) {
         </span>
         <span className="text-sm font-semibold">{product.name}</span>
       </div>
-      <div className="flex justify-center">
-        {quantity ? (
-          <ProductCounter quantity={quantity} product={product} />
-        ) : (
-          <Button fluid onClick={() => addToCart(product)}>
-            Add
-          </Button>
-        )}
+      <div className="flex justify-center" style={{ willChange: "transform" }}>
+        <motion.div
+          className={"rounded"}
+          initial={quantity ? "counter" : "button"}
+          animate={quantity ? "counter" : "button"}
+          variants={{
+            counter: {
+              width: "auto",
+              background: "#fff",
+            },
+            button: {
+              width: "100%",
+              background: "var(--cyan-600)",
+            },
+          }}
+        >
+          {quantity ? (
+            <ProductCounter quantity={quantity} product={product} />
+          ) : (
+            <Button fluid onClick={() => addToCart(product)}>
+              Add
+            </Button>
+          )}
+        </motion.div>
       </div>
     </div>
   );

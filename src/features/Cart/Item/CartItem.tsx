@@ -1,17 +1,19 @@
 import ProductCounter from "@/features/Product/Counter/ProductCounter";
 import { CartItemType } from "../cartAtom";
+import { HTMLMotionProps, motion } from "framer-motion";
 
-interface CartItemProps {
+type CartItemProps = {
   product: CartItemType;
   divider?: React.ReactNode;
-}
+} & React.PropsWithChildren<HTMLMotionProps<"div">>;
 
 export function CartItem({
   product,
   divider = <hr className={"mt-4 w-full"} />,
+  ...rest
 }: CartItemProps) {
   return (
-    <div>
+    <motion.div className="h-max flex-shrink-0" {...rest}>
       <div className="flex justify-between gap-4">
         <div className="flex flex-col">
           <span className="text-sm font-semibold">{product.name}</span>
@@ -24,6 +26,6 @@ export function CartItem({
         </div>
       </div>
       {divider}
-    </div>
+    </motion.div>
   );
 }

@@ -19,7 +19,7 @@ function Radio({ children, checked, onChange }: RadioProps) {
         )}
       >
         {checked && (
-          <CheckIcon width="12" height="100%" className="text-cyan-600" />
+          <CheckIcon width="12" height="100%" className="check text-cyan-600" />
         )}
       </div>
       <input

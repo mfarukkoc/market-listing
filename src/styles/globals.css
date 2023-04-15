@@ -23,3 +23,15 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gray-400);
 }
+
+.check {
+  stroke-dasharray: 12;
+  stroke-dashoffset: -12;
+  animation: check 0.3s ease-in-out forwards;
+}
+
+@keyframes check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

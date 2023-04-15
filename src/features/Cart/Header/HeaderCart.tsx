@@ -16,10 +16,10 @@ function HeaderShoppingCart() {
         ₺&nbsp;
         {shoppingCartTotal}
       </span>
-      <div className="absolute -left-2 bottom-0 hidden h-2 w-2 bg-cyan-800 group-focus-within:block group-hover:block">
+      <div className="absolute -left-2 bottom-0  hidden h-2 w-2 bg-cyan-800 group-focus-within:block group-hover:block">
         <div className="h-full w-full rounded-br-full bg-cyan-600"></div>
       </div>
-      <div className="absolute right-0 top-full hidden w-72 border-8 border-cyan-800 bg-cyan-800 text-cyan-800 group-focus-within:block group-hover:block">
+      <div className="absolute right-0 top-full z-10 hidden w-72 rounded-b border-8 border-cyan-800 bg-cyan-800 text-cyan-800 group-focus-within:block group-hover:block">
         <div className="flex flex-col gap-4 rounded bg-white p-4">
           {cart.length === 0 ? (
             <EmptyCart />
